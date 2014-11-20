@@ -6,70 +6,67 @@ call vundle#begin()
 " Good looking bottom :)
 Plugin 'bling/vim-airline'
 
+" Show shows a git diff in the column
+Plugin 'airblade/vim-gitgutter'
+
+" Vundle, the plug-in manager
 Plugin 'gmarik/Vundle.vim'
 
 " Ctrl+P plugin (snap open)
 Plugin 'kien/ctrlp.vim'
 
-" " Solarized
+" Precision colorscheme for the vim text editor
 Plugin 'altercation/vim-colors-solarized'
 
-" " Fugitive
+" A complement to command line git
 Plugin 'tpope/vim-fugitive'
 
+" Slim syntax highlighting for vim
 Plugin 'slim-template/vim-slim'
+
+" Highlights trailing whitespace in red
 Plugin 'bronson/vim-trailing-whitespace'
+
+" Wditing and compiling Ruby within Vim
 Plugin 'vim-ruby/vim-ruby'
 
-"theme
+" Molokai is a theme for Vim
 Plugin 'tomasr/molokai'
 
-"The NERD tree allows you to explore your filesystem and to open files and
-"directories. It presents the filesystem to you in the form of a tree which
-"you manipulate with the keyboard and/or mouse. It also allows you to perform
-"simple filesystem operations.
+" Explore your filesystem and open files and directories
 Plugin 'scrooloose/nerdtree'
 
-"This is a simple plugin that helps to end certain structures automatically.
+" This is a simple plugin that helps to end certain structures automatically.
 Plugin 'tpope/vim-endwise'
 
-"Supertab is a vim plugin which allows you to use <Tab> for all your insert
-"completion needs (:help ins-completion).
+" Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
 Plugin 'ervandew/supertab'
 
-"nsert or delete brackets, parens, quotes in pair.
+" Insert or delete brackets, parens, quotes in pair
 Plugin 'vim-scripts/Auto-Pairs'
 
-"An extensible & universal comment vim-plugin that also handles embedded
-"filetypes
+" An extensible and universal comment that also handles embedded filetypes
 Plugin 'tomtom/tcomment_vim'
 
-"Defaults everyone can agree on
+" Defaults everyone can agree on
 Plugin 'tpope/vim-sensible'
 
-"The ultimate snippet solution for Vim.
-Plugin 'SirVer/ultisnips'
-
-"Easy text exchange operator for Vim.
-Plugin 'tommcdo/vim-exchange'
-
-"Vim script for text filtering and alignment
+" Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
 
-"lean & mean status/tabline for vim that's light as air
-Plugin 'airblade/vim-gitgutter'
-
-call vundle#end()            " required
+" Required to finish vundle
+call vundle#end()
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-"put snips on dotfile folder
-"let g:UltiSnipsSnippetsDir="~/.dotfiles/vim/snips"
+" Put snips on dotfile folder
+" let g:UltiSnipsSnippetsDir="~/.dotfiles/vim/snips"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" ===============
 augroup myfiletypes
 " Clear old autocmds in group
 autocmd!
@@ -77,17 +74,21 @@ autocmd!
 autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
 augroup END
 " ================
+
 " Syntax highlighting and theme
 syntax enable
+
 " Configs to make Molokai look great
 set background=dark
 let g:molokai_original=1
 let g:rehash256=1
 set t_Co=256
 colorscheme molokai
+
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
+
 " Lovely linenumbers
 set nu
 
@@ -106,6 +107,7 @@ map <F8> Ibinding.pry<CR><Esc>
 let mapleader=','
 map <Space> /
 map ñ :
+
 " Select all text
 nmap <C-a> ggVG
 

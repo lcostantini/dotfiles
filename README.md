@@ -31,6 +31,21 @@ Everything is configured and tweaked within `~/.dotfiles`.
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
+## Configuration for Vim
+
+In the file **vimrc.symlink** you can find all the plugins and configuration that i use for vim.
+You can find the file **vimrc.symlink** in ~/.dotfiles/vim/
+
+The best way to install and configuration all is with the plugin [Vundle](https://github.com/gmarik/Vundle.vim)
+You can read about Vundle in the link or simply can do this:
+```sh
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+Then launch vim and run:
+```sh
+:PluginInstall
+```
+
 ## Contributing
 
 In vim/vimrc.symlink you will see all the plugins and mappings

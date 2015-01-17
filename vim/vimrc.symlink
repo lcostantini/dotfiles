@@ -1,4 +1,4 @@
-set nocompatible 	" be iMproved
+set nocompatible 	" Be iMproved
 filetype off 		" For vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -66,14 +66,12 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" ===============
 augroup myfiletypes
 " Clear old autocmds in group
 autocmd!
 " autoindent with two spaces, always expand tabs
 autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
 augroup END
-" ================
 
 " Syntax highlighting and theme
 syntax enable
@@ -97,16 +95,20 @@ let g:airline_powerline_fonts=1
 set laststatus=2
 
 " Mappings
+" =====================================
 map <Esc><Esc> :q <CR>
-map <F2> :NERDTree <CR>
-"map <F3> :!clear && grep -nr
-"map <F4> :!rspec --color <CR>
-map <F5> :w <CR>
-map <F6> :Gstatus <CR>
+map <F2> :NERDTreeToggle <CR>
+map <F5> :wa <CR>
+imap <F5> <Esc><F5>
 map <F8> Ibinding.pry<CR><Esc>
+map <F9> ggIrequire 'pry'<CR><Esc>
 let mapleader=','
 map <Space> /
-map ñ :
+map ñ <CR>
+map <Tab> $
+
+" For runing test
+nmap ñr :w\|!rake<CR>
 
 " Select all text
 nmap <C-a> ggVG

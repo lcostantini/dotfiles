@@ -33,6 +33,8 @@ Plugin 'vim-ruby/vim-ruby'
 " Molokai is a theme for Vim
 Plugin 'tomasr/molokai'
 
+Plugin 'kchmck/vim-coffee-script'
+
 " Explore your filesystem and open files and directories
 Plugin 'scrooloose/nerdtree'
 
@@ -94,17 +96,21 @@ let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
+" Don't create swapfile
+set noswapfile
+
 " Mappings
 " =====================================
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTreeToggle <CR>
+map <F3> :!clear && grep -nr
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
 map <F8> Ibinding.pry<CR><Esc>
 map <F9> ggIrequire 'pry'<CR><Esc>
 let mapleader=','
 map <Space> /
-map ñ <CR>
+map ñ :
 map <Tab> $
 
 " Save and runing test

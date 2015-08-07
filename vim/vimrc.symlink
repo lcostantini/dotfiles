@@ -106,7 +106,7 @@ map <F2> :NERDTreeToggle <CR>
 map <F3> :!clear && grep -nr
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
-map <F8> Ibinding.pry<CR><Esc>
+map <F8> Irequire 'pry'; binding.pry<CR><Esc>
 map <F9> ggIrequire 'pry'<CR><Esc>
 let mapleader=','
 map <Space> /

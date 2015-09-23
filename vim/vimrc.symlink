@@ -56,6 +56,9 @@ Plugin 'tpope/vim-sensible'
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
 
+" Syntax highlighting, matching rules and mappings for Markdown
+Plugin 'plasticboy/vim-markdown'
+
 " Required to finish vundle
 call vundle#end()
 
@@ -98,6 +101,9 @@ set laststatus=2
 
 " Don't create swapfile
 set noswapfile
+
+" Disable the folding configuration for Markdown plugin
+let g:vim_markdown_folding_disabled=1
 
 " Mappings
 " =====================================

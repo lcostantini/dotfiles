@@ -21,6 +21,21 @@ Plugin 'altercation/vim-colors-solarized'
 " A complement to command line git
 Plugin 'tpope/vim-fugitive'
 
+" Defaults everyone can agree on
+Plugin 'tpope/vim-sensible'
+
+" Ruby on Rails power tools
+Plugin 'tpope/vim-rails'
+
+" Lightweight support for Ruby's Bundler
+Plugin 'tpope/vim-bundler'
+
+" It's like rails.vim without the rails
+Plugin 'tpope/vim-rake'
+
+" Quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
+
 " Slim syntax highlighting for vim
 Plugin 'slim-template/vim-slim'
 
@@ -49,9 +64,6 @@ Plugin 'vim-scripts/Auto-Pairs'
 
 " An extensible and universal comment that also handles embedded filetypes
 Plugin 'tomtom/tcomment_vim'
-
-" Defaults everyone can agree on
-Plugin 'tpope/vim-sensible'
 
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'

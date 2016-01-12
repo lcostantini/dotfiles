@@ -71,6 +71,9 @@ Plugin 'godlygeek/tabular'
 " Syntax highlighting, matching rules and mappings for Markdown
 Plugin 'plasticboy/vim-markdown'
 
+" This vim plugin brings syntax highlighting and linting for API Blueprint.
+Plugin 'kylef/apiblueprint.vim'
+
 " Required to finish vundle
 call vundle#end()
 
@@ -121,7 +124,7 @@ let g:vim_markdown_folding_disabled=1
 " =====================================
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTreeToggle <CR>
-map <F3> :!clear && grep -nr
+map <F3> :!clear && ack-grep
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
 map <F8> Irequire 'pry'; binding.pry<CR><Esc>

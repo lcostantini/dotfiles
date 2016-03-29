@@ -125,6 +125,9 @@ let g:vim_markdown_folding_disabled=1
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTreeToggle <CR>
 map <F3> :!clear && ack-grep
+" how2 is a stackoverflow from the terminal
+" you need to install via npm: npm install -g how2
+nmap <F4> :!clear && how2 -l ruby
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
 map <F8> Irequire 'pry'; binding.pry<CR><Esc>

@@ -4,7 +4,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Good looking bottom :)
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Show shows a git diff in the column
 Plugin 'airblade/vim-gitgutter'

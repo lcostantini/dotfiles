@@ -1,25 +1,26 @@
-# holman does dotfiles
+# Customized dotfiles
 
 ## dotfiles
 
-Your dotfiles are how you personalize your system. These are mine.
+The dotfiles are how you personalize your system.
+You can read more about dotfiles in the holman repo [holman dotfiles](https://github.com/holman/dotfiles).
 
-I was a little tired of having long alias files and everything strewn about
-(which is extremely common on other dotfiles projects, too). That led to this
-project being much more topic-centric. I realized I could split a lot of things
-up into the main areas I used (Ruby, git, system libraries, and so on), so I
-structured the project accordingly.
+These dotfiles are mine, focused in Plugins and mappings for Vim.
 
-If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the
-subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
+## Install
 
-## install
+First you need to change your shell for **zsh**
 
-Run this:
+Install zsh and set to default:
 
 ```sh
-git clone https://github.com/holman/dotfiles.git ~/.dotfiles
+sudo apt-get install zsh
+chsh -s /bin/zsh user
+```
+Then:
+
+```sh
+git clone git@github.com:lcostantini/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
@@ -30,59 +31,30 @@ Everything is configured and tweaked within `~/.dotfiles`.
 The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
 which sets up a few paths that'll be different on your particular machine.
 
-`dot` is a simple script that installs some dependencies, sets sane OS X
-defaults, and so on. Tweak this script, and occasionally run `dot` from
-time to time to keep your environment fresh and up-to-date. You can find
-this script in `bin/`.
+## Configuration for Vim
 
-## topical
+In the file **vimrc.symlink** you can find all the plugins and configuration that i use for vim.
+You can find the file **vimrc.symlink** in ~/.dotfiles/vim/
 
-Everything's built around topic areas. If you're adding a new area to your
-forked dotfiles — say, "Java" — you can simply add a `java` directory and put
-files in there. Anything with an extension of `.zsh` will get automatically
-included into your shell. Anything with an extension of `.symlink` will get
-symlinked without extension into `$HOME` when you run `script/bootstrap`.
+The best way to install and configuration all is with the plugin [Vundle](https://github.com/gmarik/Vundle.vim)
+You can read about Vundle in the link or simply can do this:
+```sh
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+Then launch vim and run:
+```sh
+:PluginInstall
+```
 
-## what's inside
+## Contributing
 
-A lot of stuff. Seriously, a lot of stuff. Check them out in the file browser
-above and see what components may mesh up with you.
-[Fork it](https://github.com/holman/dotfiles/fork), remove what you don't
-use, and build on what you do use.
+In vim/vimrc.symlink you will see all the plugins and mappings
+that i used and a short description about each one.
 
-## components
+If you want to colaborate [Fork it](https://github.com/lcostantini/dotfiles/fork),
+remove what you don't use, and build on what you do use.
 
-There's a few special files in the hierarchy.
+## Info
 
-- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
-  available everywhere.
-- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
-  environment.
-- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
-  expected to setup `$PATH` or similar.
-- **topic/completion.zsh**: Any file named `completion.zsh` is loaded
-  last and is expected to setup autocomplete.
-- **topic/\*.symlink**: Any files ending in `*.symlink` get symlinked into
-  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
-  but still keep those autoloaded files in your home directory. These get
-  symlinked in when you run `script/bootstrap`.
-
-## bugs
-
-I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as *my* dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
-
-If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/holman/dotfiles/issues) on this repository
-and I'd love to get it fixed for you!
-
-## thanks
-
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
-[dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
-weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
-dotfiles were an easy way to get into bash customization, and then to jump ship
-to zsh a bit later. A decent amount of the code in these dotfiles stem or are
-inspired from Ryan's original project.
+I forked [Olvap](https://github.com/olvap/dotfiles) dotfiles and start my own.
+In master branch we have synchronized the repos and in branch customized i have my own changes.

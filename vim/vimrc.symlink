@@ -1,72 +1,92 @@
-set nocompatible 	" be iMproved
+set nocompatible 	" Be iMproved
 filetype off 		" For vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Good looking bottom :)
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
+" Show shows a git diff in the column
+Plugin 'airblade/vim-gitgutter'
+
+" Vundle, the plug-in manager
 Plugin 'gmarik/Vundle.vim'
 
 " Ctrl+P plugin (snap open)
 Plugin 'kien/ctrlp.vim'
 
-" " Solarized
+" Precision colorscheme for the vim text editor
 Plugin 'altercation/vim-colors-solarized'
 
-" " Fugitive
+" A complement to command line git
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'slim-template/vim-slim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'vim-ruby/vim-ruby'
-
-"theme
-Plugin 'tomasr/molokai'
-
-"The NERD tree allows you to explore your filesystem and to open files and
-"directories. It presents the filesystem to you in the form of a tree which
-"you manipulate with the keyboard and/or mouse. It also allows you to perform
-"simple filesystem operations.
-Plugin 'scrooloose/nerdtree'
-
-"This is a simple plugin that helps to end certain structures automatically.
-Plugin 'tpope/vim-endwise'
-
-"Supertab is a vim plugin which allows you to use <Tab> for all your insert
-"completion needs (:help ins-completion).
-Plugin 'ervandew/supertab'
-
-"nsert or delete brackets, parens, quotes in pair.
-Plugin 'vim-scripts/Auto-Pairs'
-
-"An extensible & universal comment vim-plugin that also handles embedded
-"filetypes
-Plugin 'tomtom/tcomment_vim'
-
-"Defaults everyone can agree on
+" Defaults everyone can agree on
 Plugin 'tpope/vim-sensible'
 
-"The ultimate snippet solution for Vim.
-Plugin 'SirVer/ultisnips'
+" Ruby on Rails power tools
+Plugin 'tpope/vim-rails'
 
-"Easy text exchange operator for Vim.
-Plugin 'tommcdo/vim-exchange'
+" Lightweight support for Ruby's Bundler
+Plugin 'tpope/vim-bundler'
 
-"Vim script for text filtering and alignment
+" It's like rails.vim without the rails
+Plugin 'tpope/vim-rake'
+
+" Quoting/parenthesizing made simple
+Plugin 'tpope/vim-surround'
+
+" Slim syntax highlighting for vim
+Plugin 'slim-template/vim-slim'
+
+" Highlights trailing whitespace in red
+Plugin 'bronson/vim-trailing-whitespace'
+
+" Wditing and compiling Ruby within Vim
+Plugin 'vim-ruby/vim-ruby'
+
+" Molokai is a theme for Vim
+Plugin 'tomasr/molokai'
+
+Plugin 'kchmck/vim-coffee-script'
+
+" Explore your filesystem and open files and directories
+Plugin 'scrooloose/nerdtree'
+
+" This is a simple plugin that helps to end certain structures automatically.
+Plugin 'tpope/vim-endwise'
+
+" Supertab is a vim plugin which allows you to use <Tab> for all your insert completion needs
+Plugin 'ervandew/supertab'
+
+" Insert or delete brackets, parens, quotes in pair
+Plugin 'vim-scripts/Auto-Pairs'
+
+" An extensible and universal comment that also handles embedded filetypes
+Plugin 'tomtom/tcomment_vim'
+
+" Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
 
-"lean & mean status/tabline for vim that's light as air
-Plugin 'airblade/vim-gitgutter'
+" Syntax highlighting, matching rules and mappings for Markdown
+Plugin 'plasticboy/vim-markdown'
 
-call vundle#end()            " required
+" This vim plugin brings syntax highlighting and linting for API Blueprint.
+Plugin 'kylef/apiblueprint.vim'
+
+" Support for Elixir's templating language
+Plugin 'elixir-lang/vim-elixir'
+
+" Required to finish vundle
+call vundle#end()
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-"put snips on dotfile folder
-"let g:UltiSnipsSnippetsDir="~/.dotfiles/vim/snips"
+" Put snips on dotfile folder
+" let g:UltiSnipsSnippetsDir="~/.dotfiles/vim/snips"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
@@ -74,20 +94,23 @@ augroup myfiletypes
 " Clear old autocmds in group
 autocmd!
 " autoindent with two spaces, always expand tabs
-autocmd FileType ruby,eruby,yaml,markdown set ai sw=2 sts=2 et
+autocmd FileType ruby,eruby,yaml,markdown,javascript set ai sw=2 sts=2 et
 augroup END
-" ================
+
 " Syntax highlighting and theme
 syntax enable
+
 " Configs to make Molokai look great
 set background=dark
 let g:molokai_original=1
 let g:rehash256=1
 set t_Co=256
 colorscheme molokai
+
 " Show trailing whitespace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\\t/
+
 " Lovely linenumbers
 set nu
 
@@ -95,21 +118,36 @@ let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
+" Don't create swapfile
+set noswapfile
+
+" Disable the folding configuration for Markdown plugin
+let g:vim_markdown_folding_disabled=1
+
 " Mappings
+" =====================================
 map <Esc><Esc> :q <CR>
-map <F2> :NERDTree <CR>
-"map <F3> :!clear && grep -nr
-"map <F4> :!rspec --color <CR>
+map <F2> :NERDTreeToggle <CR>
+map <F3> :!clear && ack-grep
+" how2 is a stackoverflow from the terminal
+" you need to install via npm: npm install -g how2
+nmap <F4> :!clear && how2 -l ruby
 map <F5> :w <CR>
-map <F6> :Gstatus <CR>
-map <F8> Ibinding.pry<CR><Esc>
+imap <F5> <Esc><F5>
+map <F8> Irequire 'pry'; binding.pry<CR><Esc>
+map <F9> ggIrequire 'pry'<CR><Esc>
 let mapleader=','
 map <Space> /
 map ñ :
+map <Tab> $
+
+" Save and runing test
+nmap ñr :w\|!rake<CR>
+
 " Select all text
 nmap <C-a> ggVG
 
-" Add brackets, parens and quotes arround a word
+" Add brackets, parens and quotes arround a words
 vmap ( I(<Esc>lxgvlA)<Esc>
 vmap [ I[<Esc>lxgvlA]<Esc>
 vmap { I{<Esc>lxgvlA}<Esc>

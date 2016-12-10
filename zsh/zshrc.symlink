@@ -40,3 +40,13 @@ done
 unset config_files
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+alias youtube-dl='/usr/local/bin/youtube-dl' # Download videos from Youtube
+
+alias exercism="$HOME/bin/exercism"
+
+fpath=(~/.zsh/completion $fpath) # Add command line completion for docker
+
+export PATH="$HOME/.exenv/bin:$PATH" # Add version manager for Elixir
+
+eval "$(exenv init -)" # Add Exenv init to your shell to enable shims and autocompletion

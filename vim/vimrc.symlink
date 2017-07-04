@@ -16,23 +16,8 @@ Plugin 'gmarik/Vundle.vim'
 " Ctrl+P plugin (snap open)
 Plugin 'kien/ctrlp.vim'
 
-" Precision colorscheme for the vim text editor
-Plugin 'altercation/vim-colors-solarized'
-
-" A complement to command line git
-Plugin 'tpope/vim-fugitive'
-
 " Defaults everyone can agree on
 Plugin 'tpope/vim-sensible'
-
-" Ruby on Rails power tools
-Plugin 'tpope/vim-rails'
-
-" Lightweight support for Ruby's Bundler
-Plugin 'tpope/vim-bundler'
-
-" It's like rails.vim without the rails
-Plugin 'tpope/vim-rake'
 
 " Quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
@@ -42,9 +27,6 @@ Plugin 'slim-template/vim-slim'
 
 " Highlights trailing whitespace in red
 Plugin 'bronson/vim-trailing-whitespace'
-
-" Wditing and compiling Ruby within Vim
-Plugin 'vim-ruby/vim-ruby'
 
 " Molokai is a theme for Vim
 Plugin 'tomasr/molokai'
@@ -63,17 +45,11 @@ Plugin 'ervandew/supertab'
 " Insert or delete brackets, parens, quotes in pair
 Plugin 'vim-scripts/Auto-Pairs'
 
-" An extensible and universal comment that also handles embedded filetypes
-Plugin 'tomtom/tcomment_vim'
-
 " Vim script for text filtering and alignment
 Plugin 'godlygeek/tabular'
 
 " Syntax highlighting, matching rules and mappings for Markdown
 Plugin 'plasticboy/vim-markdown'
-
-" This vim plugin brings syntax highlighting and linting for API Blueprint.
-Plugin 'kylef/apiblueprint.vim'
 
 " Support for Elixir's templating language
 Plugin 'elixir-lang/vim-elixir'
@@ -135,7 +111,7 @@ nmap <F4> :!clear && how2 -l ruby
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
 map <F8> Irequire 'pry'; binding.pry<CR><Esc>
-map <F9> ggIrequire 'pry'<CR><Esc>
+map <F9> Orequire 'pry'<CR><Esc>
 let mapleader=','
 map <Space> /
 map ñ :

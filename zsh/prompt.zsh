@@ -45,45 +45,19 @@ need_push () {
 }
 
 ruby_version() {
-  if (( $+commands[rbenv] ))
-  then
-    echo "$(rbenv version | awk '{print $1}')"
-  fi
-
-  if (( $+commands[rvm-prompt] ))
-  then
-    echo "$(rvm-prompt | awk '{print $1}')"
-  fi
+  echo "ruby-$(asdf current ruby | awk '{print $1}')"
 }
 
 elixir_version() {
-  if (( $+commands[exenv] ))
-  then
-    echo "elixir-$(exenv version-name)"
-  fi
+  echo "elixir-$(asdf current elixir | awk '{print $1}')"
 }
 
 node_version() {
-  echo "node-$(nvm version)"
+  echo "node-$(asdf current nodejs | awk '{print $1}')"
 }
 
 rb_prompt() {
-  if [ "$(ruby_version)" ]
-  then
-    if [ "$(elixir_version)" ]
-    then
-      if [ "$(node_version)" ]
-      then
-        echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(node_version)%{$reset_color%}"
-      else
-        echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%}"
-      fi
-    else
-      echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}"
-    fi
-  else
-    echo ""
-  fi
+  echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(node_version)%{$reset_color%}"
 }
 
 directory_name() {

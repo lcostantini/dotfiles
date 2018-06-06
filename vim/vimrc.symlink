@@ -110,9 +110,9 @@ map <F3> :!clear && ack-grep
 nmap <F4> :!clear && how2 -l ruby
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
-map <F7> Orequire IEx<CR>IEx.pry<CR><Esc>
-map <F8> Irequire 'pry'; binding.pry<CR><Esc>
-map <F9> Orequire 'pry'<CR><Esc>
+map <F7> Orequire IEx; IEx.pry<Esc>
+map <F8> Obinding.pry<Esc>
+map <F9> Orequire 'pry'; binding.pry<Esc>
 let mapleader=','
 map <Space> /
 map ñ :
@@ -122,7 +122,7 @@ map <Tab> $
 nmap ñr :w\|!rake<CR>
 
 " Select all text
-nmap <C-a> ggVG
+" nmap <C-a> ggVG
 
 " Add brackets, parens and quotes arround a words
 vmap ( I(<Esc>lxgvlA)<Esc>

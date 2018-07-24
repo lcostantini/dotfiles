@@ -49,5 +49,10 @@ fpath=(~/.zsh/completion $fpath) # Add command line completion for docker
 
 alias redis-cli="$HOME/redis/src/redis-cli"
 
+alias protobuf='$HOME/protobuf/bin/protoc'
+alias rt='DISABLE_TEST_LOGS=true bundle exec rake test'
+
+alias kube='$HOME/.kube_command.sh'
+
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash

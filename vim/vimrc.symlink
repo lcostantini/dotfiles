@@ -19,6 +19,9 @@ Plugin 'kien/ctrlp.vim'
 " Defaults everyone can agree on
 Plugin 'tpope/vim-sensible'
 
+" Git wrapper
+Plugin 'tpope/vim-fugitive'
+
 " Quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
 
@@ -53,6 +56,9 @@ Plugin 'plasticboy/vim-markdown'
 
 " Support for Elixir's templating language
 Plugin 'elixir-lang/vim-elixir'
+
+" Lightweight RSpec runner
+Plugin 'thoughtbot/vim-rspec'
 
 " Required to finish vundle
 call vundle#end()
@@ -100,25 +106,28 @@ set noswapfile
 " Disable the folding configuration for Markdown plugin
 let g:vim_markdown_folding_disabled=1
 
+let g:ctrlp_custom_ignore = 'node_modules\|coverage\|log\|bin\|tmp'
+
 " Mappings
 " =====================================
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTreeToggle <CR>
-map <F3> :!clear && ack-grep
+map <F3> :!clear && ack-grep --ignore-dir={coverage,log,tmp,db,vendor}<space>
 " how2 is a stackoverflow from the terminal
 " you need to install via npm: npm install -g how2
-nmap <F4> :!clear && how2 -l ruby
+nmap <F4> :!clear && how2 -l ruby<space>
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
 map <F7> Orequire IEx; IEx.pry<Esc>
 map <F8> Obinding.pry<Esc>
 map <F9> Orequire 'pry'; binding.pry<Esc>
 let mapleader=','
-map <Space> /
+" map <Space> /
 map ñ :
 map <Tab> $
 
 " Save and runing test
+nmap <Space> :!clear && elixir %:r_test.**<CR>
 nmap ñr :w\|!rake<CR>
 
 " Select all text
@@ -143,7 +152,22 @@ nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
 " Move a line or selected lines one position up or down
-nnoremap <C-Down> :m .+1<CR>==
-nnoremap <C-Up> :m .-2<CR>==
-vnoremap <C-Down> :m '>+1<CR>gv=gv
-vnoremap <C-Up> :m '<-2<CR>gv=gv
+nmap <C-Down> :m .+1<CR>==
+nmap <C-Up> :m .-2<CR>==
+vmap <C-Down> :m '>+1<CR>gv=gv
+vmap <C-Up> :m '<-2<CR>gv=gv
+
+" Move between vim tabs (:tabnew)
+nmap H gT
+nmap L gt
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <Esc>:tabnew<CR>
+
+" RSpec.vim mappings
+map ,c :call RunCurrentSpecFile()<CR>
+map ,n :call RunNearestSpec()<CR>
+map ,l :call RunLastSpec()<CR>
+map ,a :call RunAllSpecs()<CR>
+
+" Replace a line
+noremap dr dd"0P==

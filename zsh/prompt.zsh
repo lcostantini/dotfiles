@@ -57,7 +57,7 @@ node_version() {
 }
 
 rb_prompt() {
-  echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(node_version)%{$reset_color%}"
+  echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}@%{$fg_bold[yellow]%}$(elixir_version)%{$reset_color%}"
 }
 
 directory_name() {

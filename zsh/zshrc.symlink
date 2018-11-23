@@ -39,20 +39,16 @@ done
 
 unset config_files
 
-alias youtube-dl='/usr/local/bin/youtube-dl' # Download videos from Youtube
-
-alias rancher='$HOME/rancher/rancher'
-
-alias exercism="$HOME/bin/exercism"
-
 fpath=(~/.zsh/completion $fpath) # Add command line completion for docker
 
-alias redis-cli="$HOME/redis/src/redis-cli"
-
-alias protobuf='$HOME/protobuf/bin/protoc'
-alias rt='DISABLE_TEST_LOGS=true bundle exec rake test'
-
-alias kube='$HOME/.kube_command.sh'
+export PGUSER=postgres
+export PGPASSWORD=postgres
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+alias youtube-dl='/usr/local/bin/youtube-dl' # Download videos from Youtube
+
+alias redis-cli="$HOME/redis/src/redis-cli"
+alias protobuf='$HOME/protobuf/bin/protoc'
+alias kube='$HOME/.kube_command.sh'

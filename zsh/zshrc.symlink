@@ -50,5 +50,3 @@ export PGPASSWORD=postgres
 alias youtube-dl='/usr/local/bin/youtube-dl' # Download videos from Youtube
 
 alias redis-cli="$HOME/redis/src/redis-cli"
-alias protobuf='$HOME/protobuf/bin/protoc'
-alias kube='$HOME/.kube_command.sh'

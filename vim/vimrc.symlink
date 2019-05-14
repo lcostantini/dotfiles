@@ -112,15 +112,15 @@ let g:ctrlp_custom_ignore = 'node_modules\|coverage\|log\|bin\|tmp'
 " =====================================
 map <Esc><Esc> :q <CR>
 map <F2> :NERDTreeToggle <CR>
-map <F3> :!clear && ack-grep --ignore-dir={coverage,log,tmp,db,vendor}<space>
+map <F3> :!clear && ack-grep --ignore-file=is:yarn.lock --ignore-dir={coverage,cover,log,tmp,db,vendor,public,spec/fixtures}<space>
 " how2 is a stackoverflow from the terminal
 " you need to install via npm: npm install -g how2
 nmap <F4> :!clear && how2 -l ruby<space>
 map <F5> :w <CR>
 imap <F5> <Esc><F5>
 map <F7> Orequire IEx; IEx.pry<Esc>
-map <F8> Obinding.pry<Esc>
-map <F9> Orequire 'pry'; binding.pry<Esc>
+map <F8> Orequire 'pry'; binding.pry<Esc>
+map <F9> Obyebug<Esc>
 let mapleader=','
 " map <Space> /
 map ñ :

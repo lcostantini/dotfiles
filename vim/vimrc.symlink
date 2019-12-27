@@ -52,7 +52,7 @@ Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'godlygeek/tabular'
 
 " Syntax highlighting, matching rules and mappings for Markdown
-Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " Support for Elixir's templating language
 Plugin 'elixir-lang/vim-elixir'
@@ -102,9 +102,6 @@ set laststatus=2
 
 " Don't create swapfile
 set noswapfile
-
-" Disable the folding configuration for Markdown plugin
-let g:vim_markdown_folding_disabled=1
 
 let g:ctrlp_custom_ignore = 'node_modules\|coverage\|log\|bin\|tmp'
 

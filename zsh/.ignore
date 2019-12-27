@@ -1,0 +1,9 @@
+yarn.lock
+coverage
+cover
+log
+tmp
+db
+vendor
+public
+spec/fixtures/vcr_cassettes

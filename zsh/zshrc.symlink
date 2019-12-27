@@ -3,6 +3,8 @@ export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/projects
+# This is need it on OSX to have the same funcionality as in Linux with ctrl+r
+bindkey '^R' history-incremental-search-backward
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
@@ -44,9 +46,9 @@ fpath=(~/.zsh/completion $fpath) # Add command line completion for docker
 export PGUSER=postgres
 export PGPASSWORD=postgres
 
+alias ctags="`brew --prefix`/bin/ctags"
+alias g_ruby_tags="ctags -R --languages=ruby --exclude=.git --exclude=log ."
+# alias g_bundle_tags="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)"
+
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-
-alias youtube-dl='/usr/local/bin/youtube-dl' # Download videos from Youtube
-
-alias redis-cli="$HOME/redis/src/redis-cli"

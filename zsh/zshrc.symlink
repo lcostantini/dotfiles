@@ -46,7 +46,3 @@ export PGPASSWORD=postgres
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
-
-alias youtube-dl='/usr/local/bin/youtube-dl' # Download videos from Youtube
-
-alias redis-cli="$HOME/redis/src/redis-cli"

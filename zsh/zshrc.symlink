@@ -46,6 +46,9 @@ fpath=(~/.zsh/completion $fpath) # Add command line completion for docker
 export PGUSER=postgres
 export PGPASSWORD=postgres
 
+# You need to install CTAGS first
+# Ubuntu: sudo apt-get install exuberant-ctags
+# OSX: brew install ctags
 alias ctags="`brew --prefix`/bin/ctags"
 alias g_ruby_tags="ctags -R --languages=ruby --exclude=.git --exclude=log ."
 # alias g_bundle_tags="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)"

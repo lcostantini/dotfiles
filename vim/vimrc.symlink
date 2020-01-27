@@ -117,7 +117,7 @@ map <F2> :NERDTreeToggle <CR>
 " you need to install AG command
 " Ubunut - apt-get install silversearcher-ag
 " Mac - brew install the_silver_searcher
-map <F3> :!clear && ag --ignore-dir={yarn.lock,Gemfile.lock,coverage,cover,log,tmp,db,vendor,public,spec/fixtures}<space>
+map <F3> :!clear && ag --ignore-dir={yarn.lock,Gemfile.lock,coverage,cover,log,tmp,db,vendor,public,spec/fixtures,tags,build}<space>
 " how2 is a stackoverflow from the terminal
 " you need to install via npm: npm install -g how2
 nmap <F4> :!clear && how2 -l ruby<space>

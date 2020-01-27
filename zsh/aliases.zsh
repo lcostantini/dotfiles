@@ -13,3 +13,6 @@ alias be='bundle exec'
 alias esc='xmodmap ~/.dotfiles/script/.xmodmap'
 alias redis='~/.dotfiles/script/run-redis.sh'
 alias doco='docker-compose'
+
+# elixir
+alias epry="iex -S mix test --trace $1"

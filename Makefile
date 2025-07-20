@@ -1,17 +1,18 @@
 .PHONY: ghostty stow tmux zsh
 
-ghostty: stow
-	@chmod +x ghostty/install.sh
-	@./ghostty/install.sh
+TOOLS := ghostty tmux zsh
+
+install:
+	sudo apt-get update
+	sudo apt-get upgrade -y
+	stow $(TOOLS)
 
 stow:
 	sudo apt-get install -y stow
 	stow stow
 
-tmux: stow
-	@chmod +x tmux/install.sh
-	@./tmux/install.sh
-
-zsh: stow
-	@chmod +x zsh/install.sh
-	@./zsh/install.sh
+$(TOOLS):
+	@echo "Ensuring $@/install.sh is executable..."
+	@chmod +x $@/install.sh
+	@echo "Running $@/install.sh..."
+	@./$@/install.sh

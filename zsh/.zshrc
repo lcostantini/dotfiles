@@ -13,6 +13,12 @@ DISABLE_AUTO_TITLE=true
 source $ZSH/oh-my-zsh.sh
 
 # <--------------------- Config ----------------------->
+# Custom project directory to be used by "c" function
+export PROJECTS="$HOME/projects/ikea"
+
+# Custom completions
+export FPATH=$FPATH:$ZSH/custom/completions
+
 # Set default EDITOR to NeoVim
 export EDITOR='~/.config/nvim/nvim.appimage'
 # Use latest NVIM from package source (github.com/nvim)

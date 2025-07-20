@@ -44,3 +44,8 @@ tmuxrw() {
   # Rename tmux window
   tmux rename-window "$dir_name"
 }
+
+# Change directory to a project folder
+c() {
+  cd $PROJECTS/$1;
+}

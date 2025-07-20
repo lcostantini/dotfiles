@@ -1,5 +1,9 @@
-.PHONY: tmux
+.PHONY: tmux stow
 
-tmux:
+stow:
+	sudo apt-get install -y stow
+	stow stow
+
+tmux: stow
 	@chmod +x tmux/install.sh
 	@./tmux/install.sh

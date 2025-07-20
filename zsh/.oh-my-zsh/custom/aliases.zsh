@@ -8,6 +8,8 @@ alias sug='sudo apt-get upgrade'
 alias uu='sudo apt-get update && sudo apt-get upgrade'
 alias aa='sudo apt-get autoclean && sudo apt-get autoremove'
 
+alias nv='nvim'
+
 # You need to install CTAGS first
 # Ubuntu: sudo apt-get install exuberant-ctags
 # OSX: brew install ctags

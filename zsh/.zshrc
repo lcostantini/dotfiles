@@ -19,10 +19,10 @@ export PROJECTS="$HOME/projects/ikea"
 # Custom completions
 export FPATH=$FPATH:$ZSH/custom/completions
 
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # Set default EDITOR to NeoVim
-export EDITOR='~/.config/nvim/nvim.appimage'
-# Use latest NVIM from package source (github.com/nvim)
-alias nv=~/.config/nvim/nvim.appimage
+export EDITOR='nvim'
 
 # Page output via less. Eg: when using git log is printed on the same outpt
 # -X: do not clear the screen on exit

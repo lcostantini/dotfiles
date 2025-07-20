@@ -1,6 +1,6 @@
-.PHONY: asdf ghostty stow tmux zsh
+.PHONY: asdf ghostty nvim stow tmux zsh
 
-TOOLS := asdf ghostty tmux zsh
+TOOLS := asdf ghostty nvim tmux zsh
 
 install:
 	sudo apt-get update

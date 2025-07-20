@@ -1,4 +1,4 @@
-.PHONY: tmux stow ghostty
+.PHONY: ghostty stow tmux zsh
 
 ghostty: stow
 	@chmod +x ghostty/install.sh
@@ -11,3 +11,7 @@ stow:
 tmux: stow
 	@chmod +x tmux/install.sh
 	@./tmux/install.sh
+
+zsh: stow
+	@chmod +x zsh/install.sh
+	@./zsh/install.sh

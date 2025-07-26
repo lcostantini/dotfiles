@@ -2,7 +2,10 @@
 
 TOOLS := asdf ghostty nvim tmux zsh
 
-install:
+install: $(TOOLS)
+	@echo "🎉 All tools installed successfully!"
+
+os_setup:
 	sudo apt-get update
 	sudo apt-get upgrade -y
 	stow $(TOOLS)
@@ -12,7 +15,7 @@ stow:
 	stow stow
 
 $(TOOLS):
-	@echo "Ensuring $@/install.sh is executable..."
+	@echo "🔧 Ensuring $@/install.sh is executable..."
 	@chmod +x $@/install.sh
-	@echo "Running $@/install.sh..."
+	@echo "🚀 Running $@/install.sh..."
 	@./$@/install.sh

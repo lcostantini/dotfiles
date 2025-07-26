@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
 if ! command -v tmux -v &>/dev/null; then
-	echo "tmux not found, installing..."
+	echo "📟 tmux not found, installing..."
 	sudo apt-get install -y tmux
 else
-	echo "tmux already installed, skipping..."
+	echo "✅ tmux already installed, skipping..."
 fi
 
 stow -v -t "${HOME}" tmux

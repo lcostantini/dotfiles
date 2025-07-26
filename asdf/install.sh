@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
-# Check if asdf already exists
 if [ -d "$HOME/.asdf" ]; then
-  echo "asdf already installed at $HOME/.asdf"
+  echo "✅ asdf already installed at $HOME/.asdf"
 else
   # Clone asdf repository
   wget https://github.com/asdf-vm/asdf/releases/download/v0.18.0/asdf-v0.18.0-linux-amd64.tar.gz

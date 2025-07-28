@@ -8,4 +8,5 @@ else
 	echo "✅ tmux already installed, skipping..."
 fi
 
+echo "📂 Stowing tmux configuration files..."
 stow -v -t "${HOME}" tmux

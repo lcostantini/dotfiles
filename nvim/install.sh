@@ -10,3 +10,6 @@ if ! command -v nvim -v &>/dev/null; then
 else
   echo "✅ nvim already installed, skipping..."
 fi
+
+echo "📂 Stowing nvim configuration files..."
+stow -v -t "${HOME}" nvim

@@ -24,4 +24,5 @@ fi
 # create symlinks with stow
 # --adopt option allows stow to adopt existing files.
 # That is used because zsh creates a default config after install
+echo "📂 Stowing nvim configuration files..."
 stow --adopt -v -t "${HOME}" zsh

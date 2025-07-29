@@ -1,6 +1,6 @@
-.PHONY: asdf ghostty nvim stow tmux zsh
+.PHONY: asdf github ghostty nvim tmux zsh
 
-TOOLS := asdf ghostty nvim tmux zsh
+TOOLS := asdf github ghostty nvim tmux zsh
 SNAP_SOFTWARE := vivaldi slack spotify docker k9s
 SNAP_CONFINMENT_SOFTWARE := kubectl helm terraform google-cloud-cli
 REPOSITORY_SOFTWARE := docker-compose-plugin

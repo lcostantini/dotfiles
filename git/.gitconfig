@@ -1,0 +1,59 @@
+# [color]
+#   ui = true
+
+# Sets a global .gitignore file, so files you always want ignored can be specified once and
+# respected across all repos
+[core]
+  excludesfile = ~/.gitignore_global
+
+# Delta is a syntax-highlighting pager for git diffs
+# To install Delta, run:
+# curl curl -LO https://github.com/dandavison/delta/releases/latest/download/git-delta_0.18.2_amd64.deb
+# sudo dpkg -i git-delta_0.18.2_amd64.deb
+# [delta]
+#   features = side-by-side line-numbers
+
+# Sets Delta as the pager for git diffs, so that it is used by default when running `git diff`
+# [interactive]
+#   diffFilter = delta --color-only --dark
+
+# When lines are moved within a file, Git highlights them separately in diffs (instead of showing
+# them as delete+add)
+[diff]
+  colorMoved = default
+
+# When you do git pull, Git will rebase your local commits on top of the remote instead of creating
+# a merge commit
+[pull]
+  rebase = true
+
+# When you push a branch to a remote for the first time, Git automatically sets it to track the
+# corresponding remote branch
+[push]
+  autoSetupRemote = true
+
+# If you have uncommitted changes and run git rebase, Git will automatically:
+# 1. Stash your changes
+# 2. Perform the rebase
+# 3. Re-apply your changes afterward
+[rebase]
+  autoStash = true
+
+# When you run git commit, Git will automatically sign the commit with your GPG key
+[commit]
+  gpgsign = true
+
+# When you run git tag, Git will automatically sign the tag with your GPG key
+# [tag]
+#   gpgSign = true
+
+[init]
+  defaultBranch = main
+
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+
+[user]
+	signingkey = 31F5CC2889ECCA68
+  email = 4202315+lcostantini@users.noreply.github.com
+  name = Leandro Costantini

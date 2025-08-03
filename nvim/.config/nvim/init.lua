@@ -563,7 +563,39 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              -- for options see here: https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+              staticcheck = true, -- enables additional analyses from staticcheck.io
+              gofumpt = true, -- run gofumpt formatting
+              usePlaceholders = true,
+              directoryFilters = { '-.git', '-.vscode', '-.idea', '-.vscode-test', '-node_modules' },
+              analyses = {
+                -- for options see here: https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
+                QF1007 = true, -- Merge conditional assignment into variable declaration
+                QF1011 = true, -- Omit redundant type from variable declaration
+                S1021 = true, -- Merge variable declaration and assignment
+                S1025 = true, -- Don't use fmt.Sprintf("%s", x) unnecessarily
+                SA4006 = true, -- A value assigned to a variable is never read before being overwritten. Forgotten error check or dead code?
+                ST1005 = true, -- Incorrectly formatted error string
+                ST1006 = true, -- Poorly chosen receiver name
+                ST1019 = true, -- Importing the same package multiple times
+              },
+              hints = {
+                -- for options see here: https://github.com/golang/tools/blob/master/gopls/doc/inlayHints.md
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                ignoredError = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+            },
+          },
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs

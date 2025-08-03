@@ -91,6 +91,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 
 -- Keybinds to make split navigation easier.
+vim.keymap.set('n', '<C-h>', '<cmd>:TmuxNavigateLeft<cr>')
+vim.keymap.set('n', '<C-l>', '<cmd>:TmuxNavigateRight<cr>')
+vim.keymap.set('n', '<C-j>', '<cmd>:TmuxNavigateDown<cr>')
+vim.keymap.set('n', '<C-k>', '<cmd>:TmuxNavigateUp<cr>')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -849,6 +853,23 @@ require('lazy').setup({
       --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+    },
+    {
+      'christoomey/vim-tmux-navigator',
+      cmd = {
+        'TmuxNavigateLeft',
+        'TmuxNavigateDown',
+        'TmuxNavigateUp',
+        'TmuxNavigateRight',
+        'TmuxNavigatePrevious',
+      },
+      keys = {
+        { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
+        { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
+        { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
+        { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+        { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+      },
     },
   },
 

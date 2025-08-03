@@ -596,6 +596,8 @@ require('lazy').setup({
             },
           },
         },
+        jsonls = {},
+        terraformls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -639,6 +641,13 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'golangci-lint', -- Go linter
+        'delve', -- Go debugger
+        'tflint', -- Terraform linter
+        'markdownlint', -- Markdown linter
+        'prettier', -- Multi-language formatter
+        'hadolint', -- Dockerfile linter
+        'goimports', -- Go import formatter
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -691,6 +700,12 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        go = { 'goimports', 'gofmt' },
+        terraform = { 'terraform_fmt' },
+        tf = { 'terraform_fmt' },
+        markdown = { 'prettier' },
+        json = { 'prettier' },
+        yaml = { 'prettier' },
       },
     },
   },
@@ -864,13 +879,14 @@ require('lazy').setup({
     opts = {
       ensure_installed = {
         'bash',
-        'c',
         'diff',
         'dockerfile',
         'go',
+        'java',
         'json',
         'lua',
         'luadoc',
+        'make',
         'markdown',
         'markdown_inline',
         'query',

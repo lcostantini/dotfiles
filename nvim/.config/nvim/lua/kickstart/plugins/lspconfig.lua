@@ -284,7 +284,6 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'golangci-lint', -- Go linter
-        'delve', -- Go debugger
         'tflint', -- Terraform linter
         'markdownlint', -- Markdown linter
         'prettier', -- Multi-language formatter

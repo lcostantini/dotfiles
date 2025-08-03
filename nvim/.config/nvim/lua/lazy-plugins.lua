@@ -12,22 +12,22 @@ require('lazy').setup({
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins
-  require 'kickstart.plugins.gitsigns',
-  require 'kickstart.plugins.which-key',
-  require 'kickstart.plugins.telescope',
-  require 'kickstart.plugins.lspconfig',
-  require 'kickstart.plugins.conform',
-  require 'kickstart.plugins.blink-cmp',
-  require 'kickstart.plugins.tokyonight',
-  require 'kickstart.plugins.todo-comments',
-  require 'kickstart.plugins.mini',
-  require 'kickstart.plugins.treesitter',
-  require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.autopairs',
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.blink-cmp',
+  require 'kickstart.plugins.conform',
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.gitsigns',
+  require 'kickstart.plugins.lspconfig',
+  require 'kickstart.plugins.mini',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.telescope',
+  require 'kickstart.plugins.todo-comments',
+  require 'kickstart.plugins.tokyonight',
+  require 'kickstart.plugins.treesitter',
+  require 'kickstart.plugins.which-key',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

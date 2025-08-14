@@ -11,11 +11,9 @@
 require('lazy').setup({
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+  -- NOTE custom plugins added to kickstart
+  require 'custom.plugins.tmux-navigator',
+
   require 'kickstart.plugins.blink-cmp',
   require 'kickstart.plugins.conform',
   require 'kickstart.plugins.debug',
@@ -28,13 +26,11 @@ require('lazy').setup({
   require 'kickstart.plugins.tokyonight',
   require 'kickstart.plugins.treesitter',
   require 'kickstart.plugins.which-key',
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
-  --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
-  require 'custom.plugins.tmux-navigator',
+  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins
+  -- require 'kickstart.plugins.autopairs',
+  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.lint',
 
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!

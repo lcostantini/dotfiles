@@ -10,13 +10,14 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    { '<F2>', ':Neotree reveal source=filesystem toggle=true<CR>', desc = 'NeoTree reveal', silent = true },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
-          ['\\'] = 'close_window',
+          ['v'] = 'open_vsplit',
+          ['x'] = 'open_split',
         },
       },
     },

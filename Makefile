@@ -8,7 +8,7 @@ REPOSITORY_SOFTWARE := docker-compose-plugin
 install-tools: $(TOOLS)
 	@echo "\n🎉 All tools installed successfully!"
 
-install-sw: os_setup
+install-sw: os_setup displaylink
 	@if [ "$$(id -u)" -ne 0 ]; then \
 		echo "❌ Run this action with sudo to avoid being ask the password for each snap"; \
 		echo "sudo make install-sw"; \
@@ -39,6 +39,19 @@ os_setup:
 	# Create symlink for fd-find to fd
 	ln -s $(which fdfind) ~/.local/bin/fd
 	@echo "\n🎉 OS setup completed successfully!"
+
+# This is needed to use Dell dock to have multiple screens via the dock station
+displaylink:
+	@echo "\n📦 Installing Displaylink dependencies..."
+	sudo apt-get install -y \
+		dkms
+		libdrm-dev
+	@echo "\n📦 Getting  Displaylink dependencies..."
+	wget -O https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb ~/Downloads
+	sudo apt install ~/Downloads/synaptics-repository-keyring.deb
+	sudo apt update
+	sudo apt install displaylink-driver
+	rm ~/Downloads/synaptics-repository-keyring.deb
 
 $(TOOLS):
 	@echo "\n🔧 Ensuring $@/install.sh is executable..."
